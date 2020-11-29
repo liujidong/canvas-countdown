@@ -22,6 +22,13 @@ function render( cxt ){
     var seconds = 56
 
     renderDigit( MARGIN_LEFT , MARGIN_TOP , parseInt(hours/10) , cxt )
+    renderDigit( MARGIN_LEFT + 15*(RADIUS+1) , MARGIN_TOP , parseInt(hours%10) , cxt )
+    renderDigit( MARGIN_LEFT + 30*(RADIUS + 1) , MARGIN_TOP , 10 , cxt )
+    renderDigit( MARGIN_LEFT + 39*(RADIUS+1) , MARGIN_TOP , parseInt(minutes/10) , cxt);
+    renderDigit( MARGIN_LEFT + 54*(RADIUS+1) , MARGIN_TOP , parseInt(minutes%10) , cxt);
+    renderDigit( MARGIN_LEFT + 69*(RADIUS+1) , MARGIN_TOP , 10 , cxt);
+    renderDigit( MARGIN_LEFT + 78*(RADIUS+1) , MARGIN_TOP , parseInt(seconds/10) , cxt);
+    renderDigit( MARGIN_LEFT + 93*(RADIUS+1) , MARGIN_TOP , parseInt(seconds%10) , cxt);
 }
 
 function renderDigit( x , y , num , cxt ){
@@ -32,7 +39,7 @@ function renderDigit( x , y , num , cxt ){
         for(var j = 0 ; j < digit[num][i].length ; j ++ )
             if( digit[num][i][j] == 1 ){
                 cxt.beginPath();
-                cxt.arc()
+                cxt.arc( x+j*2*(RADIUS+1)+(RADIUS+1) , y+i*2*(RADIUS+1)+(RADIUS+1) , RADIUS , 0 , 2*Math.PI )
                 cxt.closePath()
 
                 cxt.fill()
