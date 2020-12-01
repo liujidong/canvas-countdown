@@ -6,7 +6,7 @@ var MARGIN_LEFT = 30;
 //目标时间：注意月份减去1
 //const endTime = new Date(2020,12-1,2,18,47,52);
 var endTime = new Date();
-endTime.setTime(endTime.getTime() + 3600*1000);
+//endTime.setTime(endTime.getTime() + 3600*1000);
 var curShowTimeSeconds = 0
 
 var balls = [];
@@ -42,7 +42,7 @@ window.onload = function(){
 
 function getCurrentShowTimeSeconds() {
     var curTime = new Date();
-    var ret = endTime.getTime() - curTime.getTime();
+    var ret = curTime.getTime() - endTime.getTime();
     ret = Math.round( ret/1000 )
 
     return ret >= 0 ? ret : 0;
