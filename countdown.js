@@ -4,7 +4,9 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 //目标时间：注意月份减去1
-const endTime = new Date(2020,12-1,2,18,47,52);
+//const endTime = new Date(2020,12-1,2,18,47,52);
+var endTime = new Date();
+endTime.setTime(endTime.getTime() + 3600*1000);
 var curShowTimeSeconds = 0
 
 var balls = [];
